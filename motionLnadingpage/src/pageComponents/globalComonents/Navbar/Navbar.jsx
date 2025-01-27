@@ -1,6 +1,11 @@
 import React from 'react';
 import {motion} from 'motion/react'
+import {useMediaQuery} from 'react-responsive'
+
+import './Navbar.css'
 const Navbar = () => {
+    const isMobile = useMediaQuery({query:'(max-width:768px)'})
+
     return (
         <motion.div 
         initial={{
@@ -9,13 +14,13 @@ const Navbar = () => {
      
         }}
         animate={{
-            width:[0,'45svw','40svw'],
+            width:isMobile? '100%':[0,'45svw','40svw'],
             // width:'40svw',
             transition:{duration:2,ease:[0.83, 0, 0.17, 1]}
 
         }}
         className='bg-white md:w-[40svw] h-[10svh]'>
-            <div
+            < div
                        
             className='w-full h-full flex items-center p-10'>
                  <div className='font-bold text-2xl'>
